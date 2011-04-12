@@ -192,25 +192,37 @@ Array-return getters are returning array of items, for example `Gravatar\Profile
 ### Arrays build
 
 #### Photos
+
 Each photo array have some fields:
+
 
     {
 	    value: [mixed],
 	    [type: [mixed]]
     }
+    
 
 __value__ - URL to photo
+
 __type__ - Contains "thumbnail" if photo is user's avatar *[oprional]*
 
+
+
 #### Emails
+
 
 	{
 		value: [mixed],
 		primary: [bool as string]
     }
+    
 
 __value__ - E-Mail adress
+
 __primary__ - Is that email-primary?. Bool represented as string. Instead of true/false there is "true"/"false". So using `if` statement will always return **true**.
+
+    
+    
     
 #### URLs
 
@@ -218,20 +230,28 @@ __primary__ - Is that email-primary?. Bool represented as string. Instead of tru
 		value: [mixed],
 		title: [mixed]
     }
+    
 
 __value__ - URL
+
 __title__ - URL name
 
 
+
 #### IMs
+
 
     {
 		type: [mixed]
 		value: [mixed]
     }
 
+
 __type__ - IM type
+
 __value__ - User's IM id
+
+
 
 #### Accounts
 
@@ -243,10 +263,16 @@ __value__ - User's IM id
 		verified: [bool as string],
 		shortname: [mixed]		
     }
+    
 
 __domain__ - Contains domain only
+
 __display__ - Accound display, for example: for twitter it could be @name
+
 __url__ - URL to you accound on the website
+
 __username__/__userid__ - User name or id
-__verified__ - Is user verified?
+
+__verified__ - Is user verified 
+
 __shortname__ - provider short name
