@@ -37,10 +37,10 @@ Code above will print URL to your avatar.
 #### Changing result type
 EasyGravatar allows you to get user's image and return in in few formats:
 
-  * _Gravatar\Image_::__Plain__ - Returns plain URL to avatar. [default]
-  * _Gravatar\Image_::__HTML__ - Returns HTML `<img>` tag with specified `src` attribute as Avatar URL and `alt` as `$alt` which is 'Avatar' by default.
-  * _Gravatar\Image_::__BB__ - Returns BB `[img]` tag with specified URL.
-  * _Gravatar\Image_::__Markdown__ - Returns image in Markdown syntax. _[Since 0.1.2]_
+  * _Gravatar\\Image_::__Plain__ - Returns plain URL to avatar. [default]
+  * _Gravatar\\Image_::__HTML__ - Returns HTML `<img>` tag with specified `src` attribute as Avatar URL and `alt` as `$alt` which is 'Avatar' by default.
+  * _Gravatar\\Image_::__BB__ - Returns BB `[img]` tag with specified URL.
+  * _Gravatar\\Image_::__Markdown__ - Returns image in Markdown syntax. _[Since 0.1.2]_
 
 
 Example:
@@ -62,9 +62,9 @@ Will return:
      
 But there are also defined simple size constants:
 
- - _Gravatar\Image_::__SizeSmall__ - 30x30px
- - _Gravatar\Image_::__SizeMedium__ - 70x70px
- - _Gravatar\Image_::__SizeLarge__ - 120x120px
+ - _Gravatar\\Image_::__SizeSmall__ - 30x30px
+ - _Gravatar\\Image_::__SizeMedium__ - 70x70px
+ - _Gravatar\\Image_::__SizeLarge__ - 120x120px
  
  
 ### Rating
@@ -74,10 +74,10 @@ But there are also defined simple size constants:
 	
 Constants:
 
- - _Gravatar\Image_::**RATING_G** - Suitable for display on all websites with any audience type.
- - _Gravatar\Image_::**RATING_PG** - May contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
- - _Gravatar\Image_::**RATING_R** - May contain such things as harsh profanity, intense violence, nudity, or hard drug use.
- - _Gravatar\Image_::**RATING_X** - May contain hardcore sexual imagery or extremely disturbing violence.
+ - _Gravatar\\Image_::**RATING_G** - Suitable for display on all websites with any audience type.
+ - _Gravatar\\Image_::**RATING_PG** - May contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
+ - _Gravatar\\Image_::**RATING_R** - May contain such things as harsh profanity, intense violence, nudity, or hard drug use.
+ - _Gravatar\\Image_::**RATING_X** - May contain hardcore sexual imagery or extremely disturbing violence.
 
 
 ### Default
@@ -87,11 +87,11 @@ Constants:
 	
 Constants:
 
- - _Gravatar\Image_::__MysteryMan__ - A simple, cartoon-style silhouetted outline of a person (does not vary by email hash)
- - _Gravatar\Image_::__Identicon__ - A geometric pattern based on an email hash
- - _Gravatar\Image_::__Monster__ - A generated 'monster' with different colors, faces, etc
- - _Gravatar\Image_::__Wavatar__ - Generated faces with differing features and backgrounds
- - _Gravatar\Image_::__Retro__ - Awesome generated, 8-bit arcade-style pixelated faces
+ - _Gravatar\\Image_::__MysteryMan__ - A simple, cartoon-style silhouetted outline of a person (does not vary by email hash)
+ - _Gravatar\\Image_::__Identicon__ - A geometric pattern based on an email hash
+ - _Gravatar\\Image_::__Monster__ - A generated 'monster' with different colors, faces, etc
+ - _Gravatar\\Image_::__Wavatar__ - Generated faces with differing features and backgrounds
+ - _Gravatar\\Image_::__Retro__ - Awesome generated, 8-bit arcade-style pixelated faces
  
 ### Force default
  If you you want to make default image always loaded, forceDefault can be useful here. To use forceDefault use `Gravatar\Image::setForcedDefault($bool);`.
