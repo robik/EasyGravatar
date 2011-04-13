@@ -112,13 +112,12 @@ Constants:
 	
 - - -
 
-### Chaining
  To make code cleaner and shorter EasyGravatar allows you to set parameters in chain. Here's some simple example:
  
 	$img->setSize(50)
 		->setForcedDefault(true)
 		->setRating( Gravatar\Image::RATING_PG )
-		->setSecure(true);
+		->useSecure(true);
 
 
 
