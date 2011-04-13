@@ -2,6 +2,13 @@
 __EasyGravatar__ is a simple PHP wrapper class for Gravatar that allows you to get user Avatar or Profile eaisly.
 
 
+## Requirements
+
+ - __PHP 5.3+__
+ - SPL
+ - `allow_url_fopen` enabled
+ 
+
 ## Installation
 Depends what you want to do you have to download other file (there are two).
 

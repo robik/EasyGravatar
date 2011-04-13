@@ -82,8 +82,12 @@ class Profile
      {
          $url = 'http://www.gravatar.com/' . $this->hash.'.php';
          
-         $res = unserialize(file_get_contents($url));
+         $res = file_get_contents($url);
 
+         if($res === false)
+             throw new RuntimeException('Failed to load Profile.');
+
+         $res = unserialize($res);
          $this->data = $res['entry'][0]; 
 
          return $this;
