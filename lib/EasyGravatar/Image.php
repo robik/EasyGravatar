@@ -253,14 +253,14 @@ namespace Gravatar;
          else
             $url = 'http://www.gravatar.com/avatar/'.$this->hash;
 
-         $params .= '?size=' . $this->size;
+         $params = '?size=' . $this->size;
 
          if($this->default != NULL)
             $params .= '&default=' . $this->default;
          
          $params .= '&rating=' . $this->rating;
 
-         if($this->forcedefault != NULL)
+         if($this->forceDefault != NULL)
             $params .= '&forcedefault=y';
 
          if($type == 'plain')
