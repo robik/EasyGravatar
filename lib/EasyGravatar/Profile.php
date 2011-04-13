@@ -22,7 +22,7 @@
  *      @license See LICENSE file included to package
  */
 
-namespace Gravatar;
+namespace EasyGravatar;
 
 class Profile
 { 
@@ -76,7 +76,7 @@ class Profile
      /**
       * Loads user profile data
       *
-      * @return <Gravatar\Profile>
+      * @return <GEasyGravatar\Profile>
       */
      public function loadProfile()
      {

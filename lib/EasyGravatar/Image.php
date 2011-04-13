@@ -22,7 +22,7 @@
  *      @license See LICENSE file included to package
  */
 
-namespace Gravatar;
+namespace EasyGravatar;
 
  class Image
  {
@@ -171,7 +171,7 @@ namespace Gravatar;
       *
       * @param <int> Size
       *
-      * @return <Gravatar\Image>
+      * @return <EasyGravatar\Image>
       */
      public function setSize($size)
      {
@@ -186,7 +186,7 @@ namespace Gravatar;
       *
       * @param <mixed> Rating
       *
-      * @return <Gravatar\Image>
+      * @return <EasyGravatar\Image>
       */
      public function setRating($rating)
      {
@@ -201,7 +201,7 @@ namespace Gravatar;
       *
       * @param <mixed> Path to default image/default
       *
-      * @return <Gravatar\Image>
+      * @return <EasyGravatar\Image>
       */
      public function setDefault($default)
      {
@@ -215,7 +215,7 @@ namespace Gravatar;
       *
       * @param <bool> Use
       *
-      * @return <Gravatar\Image>
+      * @return <EasyGravatar\Image>
       */
      public function setForcedDefault($bool)
      {
@@ -229,7 +229,7 @@ namespace Gravatar;
       *
       * @param <bool> Use
       *
-      * @return <Gravatar\Image>
+      * @return <EasyGravatar\Image>
       */
      public function useSecure($bool)
      {
@@ -271,8 +271,9 @@ namespace Gravatar;
              return '[img]' . $url.$params . '[/img]';
          if($type == 'markdown')
              return '![' . $alt . '](' . $url.$params . ')';
-             
+
      }
  }
 
 ?>
+

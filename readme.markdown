@@ -23,14 +23,14 @@ If you know which file you want, put it into your `include_path` or `include` pa
 
 ### Basic Usage
 
-Simplest way to get user's avatar requires only to call `Gravatar\Image::getImage()`.  
+Simplest way to get user's avatar requires only to call `EasyGravatar\Image::getImage()`.  
 Here's some example code:
 
     # Include Image.php file
      include 'path/to/EasyGravatar/Image.php';
  
-    # Creating Gravatar\Image object with specifing user's email
-     $img = new Gravatar\Image('youremailhere@example.com');
+    # Creating EasyGravatar\Image object with specifing user's email
+     $img = new EasyGravatar\Image('youremailhere@example.com');
 
     # Get plain image URL
      echo $img->getImage();
@@ -44,15 +44,15 @@ Code above will print URL to your avatar.
 #### Changing result type
 EasyGravatar allows you to get user's image and return in in few formats:
 
-  * _Gravatar\\Image_::__Plain__ - Returns plain URL to avatar. [default]
-  * _Gravatar\\Image_::__HTML__ - Returns HTML `<img>` tag with specified `src` attribute as Avatar URL and `alt` as `$alt` which is 'Avatar' by default.
-  * _Gravatar\\Image_::__BB__ - Returns BB `[img]` tag with specified URL.
-  * _Gravatar\\Image_::__Markdown__ - Returns image in Markdown syntax. _[Since 0.1.2]_
+  * _EasyGravatar\\Image_::__Plain__ - Returns plain URL to avatar. [default]
+  * _EasyGravatar\\Image_::__HTML__ - Returns HTML `<img>` tag with specified `src` attribute as Avatar URL and `alt` as `$alt` which is 'Avatar' by default.
+  * _EasyGravatar\\Image_::__BB__ - Returns BB `[img]` tag with specified URL.
+  * _EasyGravatar\\Image_::__Markdown__ - Returns image in Markdown syntax. _[Since 0.1.2]_
 
 
 Example:
 
-	$img->getImage( Gravatar\Image::HTML );
+	$img->getImage( EasyGravatar\Image::HTML );
 
 Will return:
 
@@ -63,50 +63,50 @@ Will return:
  You can also get user's avatar with specified size, rating and others.
 
 ### Size
- Default size specified by EasyGravatar is `60`, so if you want to get image in this size you can avoid specifing size, but if you want to use other size you can specify avatar size using `Gravatar\Image::setSize($size);` method. Some simple example:
+ Default size specified by EasyGravatar is `60`, so if you want to get image in this size you can avoid specifing size, but if you want to use other size you can specify avatar size using `EasyGravatar\Image::setSize($size);` method. Some simple example:
  
      $img->setSize(50);
      
 But there are also defined simple size constants:
 
- - _Gravatar\\Image_::__SizeSmall__ - 30x30px
- - _Gravatar\\Image_::__SizeMedium__ - 70x70px
- - _Gravatar\\Image_::__SizeLarge__ - 120x120px
+ - _EasyGravatar\\Image_::__SizeSmall__ - 30x30px
+ - _EasyGravatar\\Image_::__SizeMedium__ - 70x70px
+ - _EasyGravatar\\Image_::__SizeLarge__ - 120x120px
  
  
 ### Rating
- 'Gravatar allows users to self-rate their images so that they can indicate if an image is appropriate for a certain audience.'. To change rating use `Gravatar\Image::setRating($rating);` method. By default rating is set to `g`.
+ 'Gravatar allows users to self-rate their images so that they can indicate if an image is appropriate for a certain audience.'. To change rating use `EasyGravatar\Image::setRating($rating);` method. By default rating is set to `g`.
  
 	$img->setRating('pg');
 	
 Constants:
 
- - _Gravatar\\Image_::**RATING_G** - Suitable for display on all websites with any audience type.
- - _Gravatar\\Image_::**RATING_PG** - May contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
- - _Gravatar\\Image_::**RATING_R** - May contain such things as harsh profanity, intense violence, nudity, or hard drug use.
- - _Gravatar\\Image_::**RATING_X** - May contain hardcore sexual imagery or extremely disturbing violence.
+ - _EasyGravatar\\Image_::**RATING_G** - Suitable for display on all websites with any audience type.
+ - _EasyGravatar\\Image_::**RATING_PG** - May contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
+ - _EasyGravatar\\Image_::**RATING_R** - May contain such things as harsh profanity, intense violence, nudity, or hard drug use.
+ - _EasyGravatar\\Image_::**RATING_X** - May contain hardcore sexual imagery or extremely disturbing violence.
 
 
 ### Default
- When avatar you want fet doesn't exists, default Gravatar image is showed. You can change default image to yours, or one of Gravatar's builded in. To change it use `Gravatar\Image::setDefault($default);`.
+ When avatar you want fet doesn't exists, default Gravatar image is showed. You can change default image to yours, or one of Gravatar's builded in. To change it use `EasyGravatar\Image::setDefault($default);`.
  
 	$img->default('http://example.com/avatars/default.png');
 	
 Constants:
 
- - _Gravatar\\Image_::__MysteryMan__ - A simple, cartoon-style silhouetted outline of a person (does not vary by email hash)
- - _Gravatar\\Image_::__Identicon__ - A geometric pattern based on an email hash
- - _Gravatar\\Image_::__Monster__ - A generated 'monster' with different colors, faces, etc
- - _Gravatar\\Image_::__Wavatar__ - Generated faces with differing features and backgrounds
- - _Gravatar\\Image_::__Retro__ - Awesome generated, 8-bit arcade-style pixelated faces
+ - _EasyGravatar\\Image_::__MysteryMan__ - A simple, cartoon-style silhouetted outline of a person (does not vary by email hash)
+ - _EasyGravatar\\Image_::__Identicon__ - A geometric pattern based on an email hash
+ - _EasyGravatar\\Image_::__Monster__ - A generated 'monster' with different colors, faces, etc
+ - _EasyGravatar\\Image_::__Wavatar__ - Generated faces with differing features and backgrounds
+ - _EasyGravatar\\Image_::__Retro__ - Awesome generated, 8-bit arcade-style pixelated faces
  
 ### Force default
- If you you want to make default image always loaded, forceDefault can be useful here. To use forceDefault use `Gravatar\Image::setForcedDefault($bool);`.
+ If you you want to make default image always loaded, forceDefault can be useful here. To use forceDefault use `EasyGravatar\Image::setForcedDefault($bool);`.
  
 	$img->setForcedDefault(true);
 	
 ### Secure
- If you want to display avatar from page that is served over SSL, this function can be useful. To use it, set secure to true by `Gravatar\Image::useSecure(true);`
+ If you want to display avatar from page that is served over SSL, this function can be useful. To use it, set secure to true by `EasyGravatar\Image::useSecure(true);`
  
 	$img->useSecure(true);
 	
@@ -116,7 +116,7 @@ Constants:
  
 	$img->setSize(50)
 		->setForcedDefault(true)
-		->setRating( Gravatar\Image::RATING_PG )
+		->setRating( EasyGravatar\Image::RATING_PG )
 		->useSecure(true);
 
 
@@ -128,9 +128,9 @@ Constants:
  EasyGravatar user profile data gathering is based on getting element from response array with specifing path. Simplest way to get user's profile data you just need to:
  
  1. Include `path/to/EasyGravatar/Profile.php`
- 2. Create `Gravatar\Profile` object
- 3. Load user data using `Gravatar\Profile::loadProfile();`
- 4. Get data that you are interested using `Gravatar\Profile::get($path);`
+ 2. Create `EasyGravatar\Profile` object
+ 3. Load user data using `EasyGravatar\Profile::loadProfile();`
+ 4. Get data that you are interested using `EasyGravatar\Profile::get($path);`
  
  
 In PHP it's looking like that:
@@ -149,49 +149,49 @@ In PHP it's looking like that:
 	 
 
 ### Profile fields
- To get user's data you can use `Gravatar\Profile` getters. Here's list of them:
+ To get user's data you can use `EasyGravatar\Profile` getters. Here's list of them:
 
 __Basic:__
 
- - ID - `Gravatar\Profile::getID();`      
- - Hash - `Gravatar\Profile::getHash();`
- - Requested Hash - `Gravatar\Profile::getRequestedHash();`
- - Profile URL - `Gravatar\Profile::getURL();`
- - Preferred Username - `Gravatar\Profile::getPreferredUsername();`
- - Thumbnail/Avatar URL - `Gravatar\Profile::getAvatar();`  
- - Display Name - `Gravatar\Profile::getDisplayName();`  
+ - ID - `EasyGravatar\Profile::getID();`      
+ - Hash - `EasyGravatar\Profile::getHash();`
+ - Requested Hash - `EasyGravatar\Profile::getRequestedHash();`
+ - Profile URL - `EasyGravatar\Profile::getURL();`
+ - Preferred Username - `EasyGravatar\Profile::getPreferredUsername();`
+ - Thumbnail/Avatar URL - `EasyGravatar\Profile::getAvatar();`  
+ - Display Name - `EasyGravatar\Profile::getDisplayName();`  
  
 __User info:__
 
- - About - `Gravatar\Profile::getAboutInfo();`
- - Given name - `Gravatar\Profile::getGivenName();`
- - Family name - `Gravatar\Profile::getFamilyName();`
- - Formatted name - `Gravatar\Profile::getFormattedName();` 
- - Location - `Gravatar\Profile::getLocation();` 
+ - About - `EasyGravatar\Profile::getAboutInfo();`
+ - Given name - `EasyGravatar\Profile::getGivenName();`
+ - Family name - `EasyGravatar\Profile::getFamilyName();`
+ - Formatted name - `EasyGravatar\Profile::getFormattedName();` 
+ - Location - `EasyGravatar\Profile::getLocation();` 
  
 __Background:__  
- - Color - `Gravatar\Profile::getBackgroundColor();` 
- - Position - `Gravatar\Profile::getBackgroundPosition();` 
- - Repeat - `Gravatar\Profile::getBackgroundRepeat();` 
- - URL - `Gravatar\Profile::getBackgroundURL();` 
+ - Color - `EasyGravatar\Profile::getBackgroundColor();` 
+ - Position - `EasyGravatar\Profile::getBackgroundPosition();` 
+ - Repeat - `EasyGravatar\Profile::getBackgroundRepeat();` 
+ - URL - `EasyGravatar\Profile::getBackgroundURL();` 
  
 __Array-Returns:__
  
- - Photos - `Gravatar\Profile::getPhotos();`
- - URLs - `Gravatar\Profile::getURLs();`
- - Accounts - `Gravatar\Profile::getAccounts();`
- - IMs - `Gravatar\Profile::getIMs();`
- - Mails - `Gravatar\Profile::getMails();`
+ - Photos - `EasyGravatar\Profile::getPhotos();`
+ - URLs - `EasyGravatar\Profile::getURLs();`
+ - Accounts - `EasyGravatar\Profile::getAccounts();`
+ - IMs - `EasyGravatar\Profile::getIMs();`
+ - Mails - `EasyGravatar\Profile::getMails();`
 
  > __TIP:__
- > *If you don't want to use `Gravatar\Classname` all time, type `use Gravatar\classname;` on beggining of your script.*
+ > *If you don't want to use `EasyGravatar\Classname` all time, type `use EasyGravatar\classname;` on beggining of your script.*
  
   &nbsp;
  
  > __TIP:__
- > *If you want to print user name, use `Gravatar\Profile::getDisplayName()`.*
+ > *If you want to print user name, use `EasyGravatar\Profile::getDisplayName()`.*
  
-Array-return getters are returning array of items, for example `Gravatar\Profile::getPhotos()` will return __array__ of photos.
+Array-return getters are returning array of items, for example `EasyGravatar\Profile::getPhotos()` will return __array__ of photos.
 
 
 
