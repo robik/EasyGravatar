@@ -6,7 +6,7 @@ __EasyGravatar__ is a simple PHP wrapper class for Gravatar that allows you to g
 
  - __PHP 5.3+__
  - SPL
- - `allow_url_fopen` enabled
+ - `allow_url_fopen` enabled (Required for `EasyGravatar\Profile`)
  
 
 ## Installation
