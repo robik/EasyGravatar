@@ -205,7 +205,7 @@ namespace EasyGravatar;
       */
      public function setDefault($default)
      {
-         $this->default = urlencode($default);
+         $this->default = $default;
          return $this;
      }
 
@@ -253,24 +253,28 @@ namespace EasyGravatar;
          else
             $url = 'http://www.gravatar.com/avatar/'.$this->hash;
 
-         $params = '?size=' . $this->size;
+         $params = array();
+		 
+         $params['size'] = $this->size;
 
          if($this->default != NULL)
-            $params .= '&default=' . $this->default;
+		    $params['default'] = $this->default;
          
-         $params .= '&rating=' . $this->rating;
+         $params['rating'] = $this->rating;
 
          if($this->forceDefault != NULL)
-            $params .= '&forcedefault=y';
+            $params['forcedefault'] = 'y';
+			
+		 $url .= '?' . http_build_query($params);
 
          if($type == 'plain')
-             return $url.$params;
+             return $url;
          if($type == 'html')
-             return '<img src="' . $url.$params . '" alt="'.$alt.'" />';
+             return '<img src="' . $url . '" alt="'.$alt.'" />';
          if($type == 'bb')
-             return '[img]' . $url.$params . '[/img]';
+             return '[img]' . $url . '[/img]';
          if($type == 'markdown')
-             return '![' . $alt . '](' . $url.$params . ')';
+             return '![' . $alt . '](' . $url . ')';
 
      }
  }
